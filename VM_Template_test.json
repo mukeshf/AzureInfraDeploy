@@ -3,29 +3,16 @@
 	"contentVersion": "1.0.0.0",
 	"parameters": {
 		"ResourceGroup": {
-			"type": "string",
-			"metadata": {
-			"description": "Name of the Resource Group."
-		}
+			"type": "string"			
 	},
 		"vmName": {
-			"type": "string",
-			"metadata": {
-				"description": "Name of Virtual Machine."
-			}
-		},
+			"type": "string"
+	},
 		"adminUserName": {
-			"type": "string",
-			"metadata": {
-				"description": "UserName for the Virtual Machine"
-			}
+			"type": "string"
 		},
 		"adminPassword": {
-			"type": "securestring",
-			"metadata": {
-				"description": "Password for the Virtual Machine"
-			}
-		}
+			"type": "securestring"
 	},
 	"variables": {
 		"customImageStorageAccountName": "1imagestore",
