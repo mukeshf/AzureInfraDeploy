@@ -4,19 +4,19 @@
 	"parameters": {
 		"ResourceGroup": {
 			"type": "string",
-			"defaultValue": "RG_VMs"			
-	},
+			"defaultValue": "RG_VMs"
+		},
 		"vmName": {
 			"type": "string",
-			"defaultValue": "TestVM"			
-	},
+			"defaultValue": "TestVM"
+		},
 		"adminUserName": {
 			"type": "string",
-			"defaultValue": "testadmin"			
+			"defaultValue": "testadmin"
 		},
 		"adminPassword": {
 			"type": "securestring",
-			"defaultValue": "Pass@1234567"			
+			"defaultValue": "Pass@1234567"
 	}
 },
 	"variables": {
