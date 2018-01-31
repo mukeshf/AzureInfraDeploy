@@ -3,16 +3,20 @@
 	"contentVersion": "1.0.0.0",
 	"parameters": {
 		"ResourceGroup": {
-			"type": "string"			
+			"type": "string",
+			"defaultValue": "RG_VMs"			
 	},
 		"vmName": {
-			"type": "string"
+			"type": "string",
+			"defaultValue": "TestVM"			
 	},
 		"adminUserName": {
-			"type": "string"
+			"type": "string",
+			"defaultValue": "testadmin"			
 		},
 		"adminPassword": {
-			"type": "securestring"
+			"type": "securestring",
+			"defaultValue": "Pass@1234567"			
 	}
 },
 	"variables": {
