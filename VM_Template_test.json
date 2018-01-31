@@ -45,7 +45,7 @@
 		"userImageName": "[concat('http://',variables('customImageStorageAccountName'),'.blob.core.windows.net/',variables('customImageStorageContainerName'),'/',variables('customImageVhdName'))]",
 		"osDiskVhdName": "[concat('http://',variables('customImageStorageAccountName'),'.blob.core.windows.net/vmvhds','/',parameters('vmName'),'-osDisk.vhd')]",
 		"scriptLocation": "https://1imagestore.blob.core.windows.net/scripts/",
-		"scriptFileName": "BPasswordPolicy.ps1",
+		"scriptFileName": "PasswordPolicy.ps1",
 		"scriptParameters": "[concat('-scriptLocation ', variables('scriptLocation'), ' -fileToInstall ', variables('scriptFileName'))]"
 	},
 	"resources": [{
