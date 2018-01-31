@@ -20,7 +20,7 @@
 	}
 },
 	"variables": {
-		"customImageStorageAccountName": "1imagestore1",
+		"customImageStorageAccountName": "1imagestore",
 		"customImageStorageContainerName": "imagestore",
 		"customImageVhdName": "win10vm20171124110322.vhd",
 		"virtualNetworkName": "InfraVNet",
