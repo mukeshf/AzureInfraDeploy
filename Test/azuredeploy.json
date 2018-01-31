@@ -4,10 +4,10 @@
   "parameters": {
     "adminUsername": {
       "type": "string",
-      "defaultValue": "testadmin",
-      "metadata": {
+        "metadata": {
         "description": "Username for the Virtual Machine."
-      }
+      },
+      "defaultValue": "testadmin"
     },
     "adminPassword": {
       "type": "securestring",
