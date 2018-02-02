@@ -16,3 +16,4 @@ secedit /export /cfg c:\secpol.cfg
 $SecFile = gc C:\secpol.cfg
 $SecFile | % { If ($_.ReadCount -eq 7) {$_ -Replace "PasswordComplexity = 0", "PasswordComplexity = 1"} Else{$_} } | Set-Content -Path "C:\secpol.cfg"
 secedit /configure /db c:\windows\security\local.sdb /cfg c:\secpol.cfg /areas SECURITYPOLICY
+#Script Updated
