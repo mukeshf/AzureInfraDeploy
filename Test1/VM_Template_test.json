@@ -8,7 +8,7 @@
 		},
 		"vmName": {
 			"type": "string",
-			"defaultValue": "TestVM"
+			"defaultValue": "TestVM1"
 		},
 		"adminUserName": {
 			"type": "string",
