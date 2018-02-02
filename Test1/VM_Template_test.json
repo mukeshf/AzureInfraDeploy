@@ -27,7 +27,7 @@
 		"virtualNetworkResourceGroup": "RG_VNet",
 		"subnetName": "InfraSubnet",
 		"location": "Central US",
-		"vmSize": "Standard_D3_v2",
+		"vmSize": "Standard_D1_v2",
 		"publicIPAddressName": "[concat(parameters('vmName'),'-Pip')]",
 		"dnsNameForPublicIP": "[concat(parameters('vmName'),'-dns')]",
 		"nicName": "[concat(parameters('vmName'),'-VMNic')]",
