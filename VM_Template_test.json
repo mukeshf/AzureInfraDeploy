@@ -4,7 +4,7 @@
 	"parameters": {
 		"ResourceGroup": {
 			"type": "string",
-			"defaultValue": "RG_VMs"
+			"defaultValue": "RG_VM"
 		},
 		"vmName": {
 			"type": "string",
@@ -35,11 +35,8 @@
 		"vnetID": "[resourceId(variables('virtualNetworkResourceGroup'), 'Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
 		"subnetRef": "[concat(variables('vnetID'),'/subnets/', variables('subnetName'))]",
 		"userImageName": "[concat('http://',variables('customImageStorageAccountName'),'.blob.core.windows.net/',variables('customImageStorageContainerName'),'/',variables('customImageVhdName'))]",
-		"osDiskVhdName": "[concat('http://',variables('customImageStorageAccountName'),'.blob.core.windows.net/vmvhds','/',parameters('vmName'),'-osDisk.vhd')]",
-		"scriptLocation": "https://1imagestore.blob.core.windows.net/scripts/",
-		"scriptFileName": "PasswordPolicy.ps1",
-		"scriptParameters": "[concat('-scriptLocation ', variables('scriptLocation'), ' -fileToInstall ', variables('scriptFileName'))]"
-	},
+		"osDiskVhdName": "[concat('http://',variables('customImageStorageAccountName'),'.blob.core.windows.net/vmvhds','/',parameters('vmName'),'-osDisk.vhd')]"
+},
 	"resources": [
 		{
 			"apiVersion": "2015-05-01-preview",
@@ -113,30 +110,7 @@
 						"id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nicName'))]"
 					}]
 				}
-			},
-			"resources": [
-				{
-					"type": "extensions",
-					"name": "CustomScriptExtension",
-					"apiVersion": "2015-06-15",
-					"location": "[variables('location')]",
-					"dependsOn": [
-								 "[parameters('vmName')]"
-						],
-						"properties": {
-							"publisher": "Microsoft.Compute",
-							"type": "CustomScriptExtension",
-							"typeHandlerVersion": "1.8",
-							"autoUpgradeMinorVersion": true,
-							"settings": {
-								"fileUris": [
-											"[concat(variables('scriptLocation'), variables('ScriptFileName'))]"
-									],
-										"commandToExecute": "[concat('powershell -ExecutionPolicy Unrestricted -File ', variables('scriptFileName'), ' ', variables('scriptParameters'))]"
-									}
-								}
-							}
-						]
+			}
 		}
 
 	]
