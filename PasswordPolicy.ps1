@@ -4,6 +4,8 @@
 ***Version: 1.0***
 #>
 
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted
+
 ##Changing Password Policy for Local(Standalone) Virtual Machine
 #Password Policies
 net accounts /minpwlen:12 /maxpwage:45 /minpwage:30 /uniquepw:24
