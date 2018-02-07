@@ -36,8 +36,8 @@
 		"subnetRef": "[concat(variables('vnetID'),'/subnets/', variables('subnetName'))]",
 		"userImageName": "[concat('http://',variables('customImageStorageAccountName'),'.blob.core.windows.net/',variables('customImageStorageContainerName'),'/',variables('customImageVhdName'))]",
 		"osDiskVhdName": "[concat('http://',variables('customImageStorageAccountName'),'.blob.core.windows.net/vmvhds','/',parameters('vmName'),'-osDisk.vhd')]",
-		"scriptLocation": "https://onesharelivanova.blob.core.windows.net/script/",
-		"scriptFileName": "BuildScriptwithDomainJoin.ps1",
+		"scriptLocation": "https://1imagestore.blob.core.windows.net/scripts/",
+		"scriptFileName": "CopyFilesfrom-AzuretoVM.ps1",
 		"scriptParameters": "[concat('-scriptLocation ', variables('scriptLocation'), ' -fileToInstall ', variables('scriptFileName'))]"
 },
 	"resources": [
@@ -90,13 +90,13 @@
 					"vmSize": "[variables('vmSize')]"
 				},
 				"osProfile": {
-					"computername": "[parameters('vmName')]",
+					"computername": "[concat(parameters('vmName'), uniqueString(resourceGroup().id))]",
 					"adminUsername": "[parameters('adminUsername')]",
 					"adminPassword": "[parameters('adminPassword')]"
 				},
 				"storageProfile": {
 					"osDisk": {
-						"name": "[concat(parameters('vmName'),'-osDisk')]",
+						"name": "[concat(parameters('vmName'),'-osDisk', uniqueString(resourceGroup().id))]",
 						"osType": "windows",
 						"caching": "ReadWrite",
 						"createOption": "FromImage",
