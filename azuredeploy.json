@@ -9,7 +9,7 @@
       }
     },
     "accessPolicies": {
-      "type": "object"
+      "type": "string"
     },
     "kvtSkuName": {
       "type": "string",
