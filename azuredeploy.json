@@ -75,7 +75,7 @@
     }
   },
   "variables": {
-    "empty": [],
+    "empty": "[]",
 
     "resourcegroupName": "[resourceGroup().name]",
 
@@ -105,7 +105,7 @@
         "enabledForDeployment": "[parameters('kvtEnabledForDeployment')]",
         "enabledForDiskEncryption": "[parameters('kvtEnabledForDiskEncryption')]",
         "enabledForTemplateDeployment": "[parameters('kvtEnabledForTemplateDeployment')]",
-        "accessPolicies": "[if(equals(parameters('accessPolicies').list, '$null'), variables('empty'), parameters('accessPolicies').list)]",
+        "accessPolicies": "[if(equals(parameters('accessPolicies').list, 'null'), variables('empty'), parameters('accessPolicies').list)]",
         "sku": {
           "name": "[parameters('kvtSkuName')]",
           "family": "A"
