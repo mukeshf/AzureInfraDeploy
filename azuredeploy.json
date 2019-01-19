@@ -9,7 +9,6 @@
       }
     },
     "accessPolicies": {
-      "defaultValue": { "list": [] },
       "type": "object"
     },
     "kvtSkuName": {
@@ -76,7 +75,7 @@
     }
   },
   "variables": {
-    "empty": "[]",
+    "empty": [],
 
     "resourcegroupName": "[resourceGroup().name]",
 
