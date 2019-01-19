@@ -75,7 +75,7 @@
     }
   },
   "variables": {
-    "empty": "[]",
+    "empty": [],
 
     "resourcegroupName": "[resourceGroup().name]",
 
