@@ -75,7 +75,7 @@
     }
   },
   "variables": {
-    "empty": [],
+    "empty": "[]",
     "accessPolicies": "[if(equals(parameters('accessPolicies').list, 'null'), variables('empty'), parameters('accessPolicies').list)]",
     "resourcegroupName": "[resourceGroup().name]",
 
