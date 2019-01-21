@@ -9,7 +9,7 @@
       }
     },
     "accessPolicies": {
-      "defaultValue": { "list": [] }
+      "defaultValue": { "list": [] },
       "type": "object"
     },
     "kvtSkuName": {
