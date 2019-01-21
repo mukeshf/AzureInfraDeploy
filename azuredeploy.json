@@ -9,6 +9,7 @@
       }
     },
     "accessPolicies": {
+      "defaultValue": { "list": [] }
       "type": "object"
     },
     "kvtSkuName": {
@@ -76,7 +77,6 @@
   },
   "variables": {
     
-    "accessPolicies": "[if(equals(parameters('accessPolicies'), '[]'), string(parameters('accessPolicies')), parameters('accessPolicies').list)]",
     "resourcegroupName": "[resourceGroup().name]",
 
     "customerNameLong": "[split(variables('resourcegroupName'),'-')[0]]",
@@ -105,7 +105,7 @@
         "enabledForDeployment": "[parameters('kvtEnabledForDeployment')]",
         "enabledForDiskEncryption": "[parameters('kvtEnabledForDiskEncryption')]",
         "enabledForTemplateDeployment": "[parameters('kvtEnabledForTemplateDeployment')]",
-        "accessPolicies": "[variables('accessPolicies')]",
+        "accessPolicies": "[parameters('accessPolicies').list]",
         "sku": {
           "name": "[parameters('kvtSkuName')]",
           "family": "A"
